@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      .parent {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+      }
+      .parent .child_one {
+        display: flex;
+        justify-content: space-between;
+      }
+      #child_two {
+        display: none;
+        transition: 500ms;
+      }
+    </style>
+    <div class="parent">
+      <div class="child_one">
+        <h2>what do we do?</h2>
+        <button id="btn">welcome</button>
+      </div>
+
+      <div id="child_two">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae,
+          incidunt?
+        </p>
+      </div>
+      <div class="child_one">
+        <h2>what do we do?</h2>
+        <button id="btn">welcome</button>
+      </div>
+
+      <div id="child_two">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae,
+          incidunt?
+        </p>
+      </div>
+      <div class="child_one">
+        <h2>what do we do?</h2>
+        <button id="btn">welcome</button>
+      </div>
+
+      <div id="child_two">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae,
+          incidunt?
+        </p>
+      </div>
+      <div class="child_one">
+        <h2>what do we do?</h2>
+        <button id="btn">welcome</button>
+      </div>
+
+      <div id="child_two">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae,
+          incidunt?
+        </p>
+      </div>
+      <div class="child_one">
+        <h2>what do we do?</h2>
+        <button id="btn">welcome</button>
+      </div>
+
+      <div id="child_two">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae,
+          incidunt?
+        </p>
+      </div>
+    </div>
+    <script>
+      let closableDivs = document.querySelectorAll("#child_two");
+      let buttons = document.querySelectorAll(".child_one");
+  
+      buttons.forEach((button, index) => {
+        button.addEventListener("click", () => {
+          if (closableDivs[index].style.display == "block") {
+            closableDivs[index].style.display = "none";
+          } else {
+            closableDivs.forEach((closableDiv) => {
+              closableDiv.style.display = "none";
+            });
+            closableDivs[index].style.display = "block";
+          }
+        });
+      });
+
+      // botin.addEventListener("click", ask);
+      // function ask() {
+      //   if (secondDiv.style.display == "block") {
+      //     secondDiv.style.display = "none";
+      //   } else {
+      //     secondDiv.style.display = "block";
+      //   }
+      // }
+    </script>
+  </body>
+</html>

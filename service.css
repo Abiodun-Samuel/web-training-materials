@@ -1,0 +1,74 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* css variables */
+:root{
+  --blue-color: rgb(21, 120, 234);
+  --p-1rem: 1rem;
+}
+/* utility class */
+.margin-1rem{
+  padding: 1rem;
+}
+
+/* service styles */
+#service {
+  position: relative;
+  padding: var(--p-1rem);
+}
+
+#service .service__container {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+}
+#service .service__container .service__item {
+  max-width: 300px;
+  border-bottom: 5px solid var(--blue-color);
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 5px 5px #d6d5d5;
+}
+#service .service__container .service__item:hover {
+  background-color: var(--blue-color);
+}
+#service .service__container .service__item:hover .service__item-top {
+  background-color: white;
+}
+#service .service__container .service__item:hover .service__item-top h1 {
+  color: var(--blue-color);
+}
+
+#service .service__container .service__item:hover .service__item-bottom h2,
+#service .service__container .service__item:hover .service__item-bottom p {
+  color: white;
+}
+
+#service .service__container .service__item .service__item-top {
+  background-color: var(--blue-color);
+  display: inline-flex;
+  border-radius: 50%;
+  padding: 0.5rem;
+  height: 45px;
+  width: 45px;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+#service .service__container .service__item .service__item-top h1 {
+  color: #fff;
+}
+
+#service .service__container .service__item .service__item-bottom {
+  margin: 5px;
+}
+#service .service__container .service__item .service__item-bottom h2 {
+  margin: 5px;
+  font-weight: bolder;
+}

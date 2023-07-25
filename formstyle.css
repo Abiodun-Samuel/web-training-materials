@@ -1,38 +1,49 @@
-body{
+.thumbnail{
+    width: 400px;
+    position: relative;
+}
+.thumbnail__image img{
+    max-width: 100%;
+}
+.thumbnail__text {
+    position: absolute;
+    top: 120px;
+    padding: 0 15px;
+    display: flex;
+    gap: 40px;
+}
+.thumbnail__text h1{
+    color: aqua;
+    font-size: 20px;
+}
+.thumbnail__text p{
+    color: antiquewhite;
+}
+
+
+/* .child_one{
+    width: 150px;
+    height: 150px;
+    background-color: red;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: end;
+    gap:10px;
 }
-.registration .registration__header{ 
-    margin-bottom: 30px ;
-} 
-.registration .registration__header >  h1{
-    color: rgb(167, 24, 244);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    text-align: center;
-    
+.child_two{
+    width: 150px;
+    height: 150px;
+    background-color: blue;
 }
-label{
-    font-size: 11px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin-bottom: 5px;
-    color: #242424;
-}
-.registration .registration__form > .registration__form-one{
+.child_three{
+    width: 150px;
+    height: 150px;
+    background-color: green;
+} */
+/* .parent{
     display: flex;
-}
-.registration .registration__form > .registration__form-one input{
-    width: 90%;
-    margin-right: 10px;
-    border: 1.5px solid rgb(218, 155, 252);
-    color: rgb(183, 56, 252);
-    padding: 0.5rem;
-    border-radius: 4px;
-    outline: 0.5px solid rgb(218, 155, 252);
-}
-.registration .registration__form > .registration__form-one input::placeholder{
- color: #8a8a8a;
-}
-.registration .registration__form > .registration__form-one input:focus{
-    border: 1.5px solid red;
-}
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+} */

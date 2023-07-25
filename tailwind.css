@@ -1,0 +1,17 @@
+.item:hover {
+  background-color: rgb(59 130 246);
+}
+.item:hover div:first-child {
+  background-color: white;
+  color: white;
+}
+.item:hover div:first-child h1 {
+  color: rgb(59 130 246);
+}
+.item:hover div:last-child h2,
+.item:hover div:last-child p {
+  color: white;
+}
+h1{
+    color: red;
+}

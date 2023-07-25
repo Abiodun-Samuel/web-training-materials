@@ -1,0 +1,48 @@
+.transition {
+  height: 100px;
+  width: 100px;
+  background-color: red;
+  border-radius: 4px;
+  transition: 500ms;
+  /* transition: border-radius 2000ms; 1000ms === 1s */
+  /* transition-delay: 1000ms; */
+}
+
+.transition:hover {
+  transform: rotateZ(-30deg);
+}
+/* :hover  */
+/* pseudo selector */
+
+.box {
+  margin-top: 2rem;
+  height: 100px;
+  width: 100px;
+  background-color: blue;
+  border-radius: 4px;
+  animation: move-right 1000ms infinite;
+  position: relative;
+}
+.box:hover {
+   
+  /* animation-name: move-right;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite; */
+}
+@keyframes move-right {
+  0% {
+    left: 0px;
+  }
+  25% {
+    left: 25px;
+  }
+  50% {
+    left: 50px;
+  }
+  75% {
+    left: 75px;
+  }
+  100% {
+    left: 100px;
+  }
+}
