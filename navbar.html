@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      a {
+        text-decoration: none;
+      }
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: blueviolet;
+        padding: 13px;
+        height: 30px;
+      }
+      .nav .nav__logo a {
+        color: white;
+        font-weight: bolder;
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .nav .nav__links a {
+        padding: 5px 10px;
+        margin: 5px;
+        border-radius: 4px;
+        color: #242424;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        transition: 500ms;
+      }
+      .nav .nav__links a:hover {
+        background-color: rgb(69, 0, 134);
+        color: beige;
+      }
+      #nav__toggler {
+        cursor: pointer;
+        padding: 5px;
+        display: none;
+      }
+      .mobile__navbar {
+        height: 90vh;
+        background-color: blueviolet;
+        display: none;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 2.5rem;
+        transition: 500ms;
+      }
+      .mobile__navbar a {
+        padding: 5px 10px;
+        border-radius: 4px;
+      }
+      .mobile__navbar a:hover {
+        background-color: rgb(69, 0, 134);
+        color: beige;
+      }
+      @media screen and (max-width: 600px) {
+        #nav__toggler {
+          display: block;
+        }
+        .nav .nav__links {
+          display: none;
+        }
+      }
+      .divs {
+        margin: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5rem;
+      }
+      .divs div {
+        height: 200px;
+        width: 200px;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="nav">
+        <div class="nav__logo">
+          <a href="">Samuel</a>
+        </div>
+        <div class="nav__links">
+          <a href="">Home</a>
+          <a href="">About</a>
+          <a href="">Contact</a>
+          <a href="">Pricing</a>
+        </div>
+        <div id="nav__toggler">
+          <iconify-icon icon="vaadin:menu"></iconify-icon>
+        </div>
+      </div>
+      <div class="mobile__navbar">
+        <a href="">Home</a>
+        <a href="">About</a>
+        <a href="">Contact</a>
+        <a href="">Pricing</a>
+      </div>
+    </header>
+
+    <div class="divs">
+      <div data-aos="fade-up"></div>
+      <div data-aos="fade-up"></div>
+      <div data-aos="fade-up"></div>
+      <div data-aos="fade-up"></div>
+      <div data-aos="fade-up"></div>
+      <div data-aos="fade-up"></div>
+      <div data-aos="fade-up"></div>
+      <div data-aos="fade-up"></div>
+      <div data-aos="fade-up"></div>
+      <div data-aos="fade-up"></div>
+      <div data-aos="fade-up"></div>
+      <div data-aos="fade-up"></div>
+      <div data-aos="fade-up"></div>
+      <div data-aos="fade-up"></div>
+      <div data-aos="fade-up"></div>
+      <div data-aos="fade-up"></div>
+      <div data-aos="fade-up"></div>
+      <div data-aos="fade-up"></div>
+      <div data-aos="fade-up"></div>
+      <div data-aos="fade-up"></div>
+
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script>
+      AOS.init({
+        delay: 0, // values from 0 to 3000, with step 50ms
+        duration: 1000, // values from 0 to 3000, with step 50ms
+        easing: "ease", // default easing for AOS animations
+        once: false, // whether animation should happen only once - while scrolling down
+        mirror: false,
+      });
+      let toggler = document.getElementById("nav__toggler");
+      let mobile__navbar = document.querySelector(".mobile__navbar");
+      toggler.addEventListener("click", () => {
+        if (mobile__navbar.style.display == "flex") {
+          mobile__navbar.style.display = "none";
+        } else {
+          mobile__navbar.style.display = "flex";
+        }
+      });
+
+      //object
+      const car = {
+        type: "ford",
+        status: true,
+        quantity: 30,
+        quality: function () {
+          return this.type + this.quantity + this.status;
+        },
+        check_two: () => {
+          return "check two";
+        },
+        check() {
+          return "check";
+        },
+      };
+      let x = car.check_two();
+      //   console.log(car["quantity"]);
+      //   console.log(x);
+
+      let students = [
+        { name: "segun", class: "ss3", gender: "male", age: 15, fit: true },
+        { name: "bola", class: "ss2", gender: "female", age: 20, fit: false },
+        { name: "progress", class: "ss1", gender: "male", age: 10, fit: false },
+        { name: "tife", class: "ss2", gender: "female", age: 11, fit: true },
+        { name: "kunle", class: "ss3", gender: "male", age: 18, fit: true },
+      ];
+      // get all students in ss3 using filter method ()=>{}
+      let ss3_student = students.filter((student) => {
+        return student.class == "ss3";
+      });
+      let female_student = students.filter((student) => {
+        return student.gender !== "female";
+      });
+      // all fit students
+      let fit_student = students.filter((student) => {
+        return !student.fit;
+      });
+      console.log(fit_student);
+    </script>
+  </body>
+</html>
