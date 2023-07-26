@@ -1,12 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+    <style>
+      #container {
+        height: 100px;
+        width: 100px;
+        background: blue;
+        margin-bottom: 1rem;
+      }
+      button {
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
     
-    <script src="./excercise.js"></script>
-</body>
+    <div id="container"></div>
+    <button id="inc_click">Increase By 0.5</button>
+    <button id="inc_dblclick">Increase By 1</button>
+    <button id="dec_click">Decrease By 0.5</button>
+    <button id="dec_dblclick">Decrease By 1</button>
+
+    <script>
+      function we() {
+        const x = 4;
+        let y = 5;
+        var z = 9;
+      }
+      we()
+      //   {
+
+      //     console.log({ x, y, z });
+      //   }
+
+      function ab() {
+        console.log("function", { x, y, z });
+      }
+      ab();
+      //   let value = 100;
+
+      //   inc_click.addEventListener("click", () => {
+      //     value += 0.5;
+      //     container.style.width = `${value}px`;
+      //     container.style.height = `${value}px`;
+      //   });
+      //   inc_dblclick.addEventListener("dblclick", () => {
+      //     value += 1;
+      //     container.style.width = `${value}px`;
+      //     container.style.height = `${value}px`;
+      //   });
+    </script>
+  </body>
 </html>

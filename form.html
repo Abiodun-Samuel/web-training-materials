@@ -5,55 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./formstyle.css" />
     <title>Form</title>
+    <style>
+      input {
+        margin: 5px;
+      }
+    </style>
   </head>
   <body>
-    <div class="thumbnail">
-      <div class="thumbnail__image">
-        <img
-          src="https://www.freecodecamp.org/news/content/images/size/w2000/2022/09/jonatan-pie-3l3RwQdHRHg-unsplash.jpg"
-          alt=""
-        />
-      </div>
-      <div class="thumbnail__text">
-        <h1>Lorem ipsum dolor sit.</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum aut
-          quae obcaecati dolorem. Fugiat corporis libero quis rerum repellat
-          quae at temporibus quo reiciendis, illum nobis, saepe optio vero aut.
-        </p>
-      </div>
-    </div>
-
-    <!-- <div class="parent">
-      <div class="child_one">
-        <p>One</p>
-        <p>two</p>
-      </div>
-      <div class="child_two">2</div>
-      <div class="child_three">3</div>
-    </div> -->
-
     <div class="registration">
-      <!-- <form action="">
+      <form action="">
         <div class="registration__header">
           <h1>Registration</h1>
         </div>
         <div class="registration__header">
           <h1>Registration</h1>
-        </div> -->
-      <!-- <div class="registration__form">
+        </div>
+        <div class="registration__form">
           <div class="registration__form-one">
-            <div>
-              <label for="first_name">First Name</label>
+            <form>
               <input type="text" id="first_name" placeholder="First name" />
-            </div>
-            <div>
-              <label for="last_name">Last Name</label>
-              <input type="file" />
-            </div>
+              <input type="text" id="last_name" placeholder="Last name" />
+              <br />
+              <button type="submit" id="submit">Submit</button>
+            </form>
           </div>
-        </div> -->
-      <!-- </form> -->
+        </div>
+      </form>
     </div>
+    <script>
+      let last_nameEl = document.getElementById("last_name");
+      let first_nameEl = document.getElementById("first_name");
+      let form = document.querySelector("form");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        let firstName = first_nameEl.value;
+        let lastName = last_nameEl.value
+        let user = {
+          name:  `${firstName} ${lastName}`
+        }
+      });
+    </script>
   </body>
 </html>
+
+<!-- display user object with name, age, email, address, gender, dob, phone -->
