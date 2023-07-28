@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .my_class {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <input type="text" name="list" />
+      <button type="submit">Add to list</button>
+      <button id="clear_btn" type="button">Clear All</button>
+    </form>
+
+    <div class="display"></div>
+
+    <script>
+      //selecting all required elements to be used
+      let form = document.querySelector("form");
+      let display = document.querySelector(".display");
+      let clear_btn = document.querySelector("#clear_btn");
+
+
+      // to clear all at once
+      clear_btn.addEventListener("click", () => {
+        if (display.childNodes.length <= 0) {
+          return alert("You have no to do items");
+        }
+        display.innerHTML = null;
+      });
+
+      let count = 0;
+      
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        let data = form.list.value;
+        form.list.value = null;
+
+        if (data.trim().length <= 0) {
+          return alert("Please enter an item");
+        }
+
+        count += 1;
+
+        let div = document.createElement("div"); //creating a div 
+        div.classList.add("my_class");
+
+        // creating a p tag 
+        let para = document.createElement("p");
+        let textNode = document.createTextNode(`${count}. ${data}`);
+        para.appendChild(textNode);
+
+        let button = document.createElement("button");
+        button.classList.add("my_button"); // add the class of "my_button" to the button
+
+        let text = document.createTextNode("remove");
+        button.appendChild(text);
+
+        div.appendChild(para);
+        div.appendChild(button);
+        display.appendChild(div);
+
+        let clik = document.querySelectorAll(".my_button"); // this is for selecting all the buttons
+        let allDivs = document.querySelectorAll(".my_class");
+
+        clik.forEach((item, index) => {
+          item.addEventListener("click", (ev) => {
+            ev.target.parentElement.remove();
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
