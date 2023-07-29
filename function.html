@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        
+      try {
+        fetch("https://fakestoreapi.com/products/")
+          .then((res) => res.json())
+          .then((json) => console.table(json));
+      } catch (error) {
+         console.error('error')
+      }
+
+      // (function multiplyNumber(){  // IIFE
+      //     let a = 4
+      //    let b = 8
+      //    let c = a * b
+      //    console.log(c)
+      //  })()
+
+      //function declaration
+      function addNumber(a, b) {
+        let c = a + b;
+        // console.log(c);
+      }
+      addNumber(4, 56); //function invocation // calling the function
+
+      // return keyword
+      function add(a, b) {
+        if (a <= 0) return null;
+        let c = a + b;
+        return c;
+      }
+      let res = add(2, 10);
+    //   console.log(res);
+
+      //   annonymous function
+      //   console.log(()=>{})
+
+      // arrow function
+      let subtractNumber = (a, b) => {
+        // console.log(a - b);
+      };
+      subtractNumber(95, 5);
+    </script>
+  </body>
+</html>
