@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <!-- <div>
+      <div>
+        <span>LOGO</span>
+      </div>
+      <div>
+        <a href="/index.html">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/about.html">About</a>
+        <button class="cta">Click here</button>
+      </div>
+    </div> -->
+    <!-- <form id="form" action=""> -->
+      <input type="text" id="input" name="fName"/>
+      <button id="button" type="submit">click</button>
+    <!-- </form> -->
+
+    <script>
+      const button = document.getElementById("button");
+      // const form = document.getElementById("form");
+      const input = document.getElementById("input");
+      button.addEventListener("click", (e) => {
+        console.log(input.value);
+      });
+    </script>
+  </body>
+</html>
