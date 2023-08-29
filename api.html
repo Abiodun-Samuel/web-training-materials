@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>APIs</title>
+    <style>
+      div {
+        height: 50vh;
+        border: 1.5px solid red;
+        margin: 10px 0;
+        border-radius: 4px;
+        padding: 10px;
+        overflow-y: scroll;
+      }
+      button {
+        background-color: #242424;
+        color: aliceblue;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: 500ms ease;
+      }
+      button:hover {
+        transform: scale(0.95);
+      }
+      input {
+        padding: 0.5rem;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="display"></div>
+    <input
+      min="1"
+      max="30"
+      id="input"
+      type="number"
+      name=""
+      placeholder="How many jokes do you want?"
+    />
+    <button id="btn">Generate</button>
+
+    <script>
+      const btn = document.getElementById("btn");
+      const display = document.getElementById("display");
+      const input = document.getElementById("input");
+    //   input.addEventListener("input", () => {
+    //     let numberOfJokes = Number(input.value);
+    //     if (numberOfJokes > 30 || numberOfJokes < 0) {
+    //       return alert("The number of jokes must be between 1 and 30");
+    //     } else {
+    //       numberOfJokes === 0 ? (numberOfJokes = 1) : numberOfJokes;
+    //     }
+    //   });
+
+      btn.addEventListener("click", async () => {
+        const options = {
+          method: "GET",
+          headers: {
+            "X-Api-Key": "7hSz7THYKkJe1dHcke938g==PseHrJxWfQwGlDIL",
+          },
+        };
+        let numberOfJokes = Number(input.value) || +input.value;
+        console.log(numberOfJokes)
+        if (numberOfJokes > 30 || numberOfJokes < 0) {
+          return alert("The number of jokes must be between 1 and 30");
+        } else {
+          numberOfJokes === 0 ? numberOfJokes = 1 : numberOfJokes;
+        }
+        const res = await fetch(
+          `https://api.api-ninjas.com/v1/jokes?limit=${numberOfJokes}`,
+          options
+        );
+        const jokes = await res.json();
+        display.innerHTML = null;
+        jokes.forEach((item, index) => {
+          const p = document.createElement("p");
+          p.innerHTML = `${index + 1}. ${item.joke}`;
+          display.appendChild(p);
+        });
+      });
+    </script>
+  </body>
+</html>

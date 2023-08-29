@@ -17,14 +17,64 @@
     </style>
   </head>
   <body>
-    
-    <div id="container"></div>
+    <img
+      src="http://assets.stickpng.com/thumbs/580b585b2edbce24c47b2704.png"
+      alt="photos"
+      height="150px"
+    />
+    <img
+      src="https://static.vecteezy.com/system/resources/previews/001/193/929/non_2x/vintage-car-png.png"
+      alt="photos"
+      height="150px"
+    />
+    <img
+      src="https://www.kindpng.com/picc/m/381-3816942_indoor-plants-png-transparent-png.png"
+      alt="photos"
+      height="150px"
+    />
+    <img
+      src="https://www.freepnglogos.com/uploads/dog-png/bow-wow-gourmet-dog-treats-are-healthy-natural-low-4.png"
+      alt="photos"
+      height="150px"
+    />
+    <img
+      src="https://assets.webiconspng.com/uploads/2017/09/House-PNG-Image-45779.png"
+      alt="photos"
+      height="150px"
+    />
+    <img
+      src="https://assets.webiconspng.com/uploads/2017/09/House-PNG-Image-45779.png"
+      alt="photos"
+      height="150px"
+    />
+    <img
+      src="https://assets.webiconspng.com/uploads/2017/09/House-PNG-Image-45779.png"
+      alt="photos"
+      height="150px"
+    />
+    <img
+      src="https://assets.webiconspng.com/uploads/2017/09/House-PNG-Image-45779.png"
+      alt="photos"
+      height="150px"
+    />
+
+    <!-- <div id="container"></div>
     <button id="inc_click">Increase By 0.5</button>
     <button id="inc_dblclick">Increase By 1</button>
     <button id="dec_click">Decrease By 0.5</button>
-    <button id="dec_dblclick">Decrease By 1</button>
-
+    <button id="dec_dblclick">Decrease By 1</button> -->
     <script>
+      const images = document.querySelectorAll("img");
+      images.forEach((image, index) => {
+        if (index % 2 === 0) {
+          image.style.border = "5px solid red";
+        } else {
+          image.style.border = "5px dashed blue";
+        }
+      });
+    </script>
+
+    <!-- <script>
       function we() {
         const x = 4;
         let y = 5;
@@ -52,6 +102,6 @@
       //     container.style.width = `${value}px`;
       //     container.style.height = `${value}px`;
       //   });
-    </script>
+    </script> -->
   </body>
 </html>

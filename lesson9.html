@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .img_class{
+        width: 200px;
+        /* height: auto; */
+        border: 1.5px solid red;
+        margin: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <label for="file">file</label> <br />
+    <input type="file" id="file" multiple accept=".jpeg, .png, .jpg" />
+    <!-- <img src="" alt="" id="img" width="400" height="auto"> -->
+    <button>submit</button>
+
+    <script>
+      const file = document.getElementById("file");
+      const { body } = document;
+      // const img = document.getElementById("img");
+
+      function getFile() {
+        for (let i of file.files) {
+          const reader = new FileReader();
+          reader.readAsDataURL(i);
+          const img = document.createElement("img");
+          reader.onload = function () {
+            img.className = 'img_class'
+            img.src = reader.result;
+            body.appendChild(img)
+          };
+        }
+      }
+
+      file.addEventListener("change", () => {
+        getFile();
+      });
+    </script>
+    <!-- <script>
+      // let fName = 'Progress'
+      // let lName = 'Adediran'
+      // let fullName = `${fName} ${lName}`
+      const person = {
+        lName: "Progress",
+        fName: "Adediran",
+        status: false,
+      };
+      const id = {
+        color: 'red',
+        size: '20px'
+      }
+      //    let fullName = fName + ' ' + lName
+      // const lastname = person.lName
+    //   const { lName } = person;
+    //   console.log(lName);
+    //   console.log(person);
+    let total = {...person, ...id}
+    const color = ['red', 'purple']
+    const q = ['1', 2, 3]
+    const combo = [...color, ...q]
+    //   console.log(combo);
+    function unknown (b,  a, ...args){
+        console.log(args)
+        console.log(a)
+    }
+// unknown('qwer', 'gghjjd', 'gghjj', 'zxcvs')
+
+
+    </script> -->
+  </body>
+</html>
